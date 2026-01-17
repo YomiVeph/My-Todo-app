@@ -132,20 +132,11 @@ function renderTodos() {
     const todoText = document.createElement("span");
     todoText.classList.add("todo-item-text");
     todoText.textContent = todo.text;
-    // todoText.addEventListener("click", () => {
-    //   const newText = prompt("Edit task:", todo.text);
-    //   if (newText !== null && newText.trim() !== "") {
-    //     todo.text = newText.trim();
-    //     saveTodos();
-    //     renderTodos();
-    //   }
-    // });
+
     todoText.contentEditable = true;
     todoText.addEventListener("blur", () => {
-      todoText.addEventListener("blur", () => {
-        todo.text = todoText.textContent.trim();
-        saveTodos();
-      });
+      todo.text = todoText.textContent.trim();
+      saveTodos();
     });
 
     const deleteBtn = document.createElement("button");
