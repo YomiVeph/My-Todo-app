@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>My Todo-app</title>
+  </head>
+  <body>
+    <div class="my-app">
+      <header>
+        <div class="header-top">
+          <h1>
+            <i class="fas fa-check-circle"></i>
+            My Task
+          </h1>
+          <p id="date"></p>
+        </div>
+        <div class="toggle-change">
+          <button id="theme-toggle">
+            <i class="fas fa-moon"></i>
+          </button>
+        </div>
+      </header>
+
+      <main>
+        <section class="todo-input">
+          <input type="text" id="task-input" placeholder="Input your Task" />
+          <div class="priority-wrapper">
+            <div class="priority-display" id="priority-display">
+              <span id="priority-value">Medium</span>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="priority-dropdown hidden" id="priority-dropdown">
+              <div class="priority-option" data-value="low">Low</div>
+              <div class="priority-option" data-value="medium">Medium</div>
+              <div class="priority-option" data-value="high">High</div>
+            </div>
+          </div>
+          <button id="add-task">
+            <i class="fas fa-plus"></i>
+          </button>
+        </section>
+        <section class="filters">
+          <span class="filter active" data-filter="all">All</span>
+          <span class="filter" data-filter="active">Active</span>
+          <span class="filter" data-filter="completed">Completed</span>
+        </section>
+        <section class="todos-container">
+          <ul class="todo-list" id="todo-list"></ul>
+          <div class="empty-state hidden">
+            <i class="fas fa-clipboard-list"></i>
+            <p>No tasks available. Add a new task to get started!</p>
+          </div>
+        </section>
+      </main>
+      <footer>
+        <p id="items-left"><span id="items-count">0</span> items left</p>
+        <button id="clear-completed">Clear Completed</button>
+      </footer>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
